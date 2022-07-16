@@ -1,8 +1,6 @@
 /* eslint-disable no-undef */
 const { expect } = require('chai');
-const {
-  addItems,
-} = require('./addItems');
+const { addItems } = require('./addItems');
 
 describe('addItems', () => {
   it('is a function', () => {
@@ -14,20 +12,22 @@ describe('addItems', () => {
       {
         item: 'milk',
         price: 2.99,
-        category: 'dairy',
+        category: 'dairy'
       },
       {
         item: 'cheese',
         price: 4.99,
-        category: 'dairy',
-      },
+        category: 'dairy'
+      }
     ];
 
-    const itemsToAdd = [{
-      item: 'ice cream',
-      price: 3.99,
-      category: 'dairy',
-    }];
+    const itemsToAdd = [
+      {
+        item: 'ice cream',
+        price: 3.99,
+        category: 'dairy'
+      }
+    ];
     const returnedValue = addItems(cart, itemsToAdd);
     expect(typeof returnedValue).to.equal('object');
     expect(Array.isArray(returnedValue)).to.equal(true);
@@ -38,41 +38,41 @@ describe('addItems', () => {
       {
         item: 'milk',
         price: 2.99,
-        category: 'dairy',
+        category: 'dairy'
       },
       {
         item: 'cheese',
         price: 4.99,
-        category: 'dairy',
-      },
+        category: 'dairy'
+      }
     ];
 
-    const itemsToAdd = [{
-      item: 'ice cream',
-      price: 3.99,
-      category: 'dairy',
-    }];
+    const itemsToAdd = [
+      {
+        item: 'ice cream',
+        price: 3.99,
+        category: 'dairy'
+      }
+    ];
     const returnedValue = addItems(cart, itemsToAdd);
 
-    expect(returnedValue).to.deep.equal(
-      [
-        {
-          item: 'milk',
-          price: 2.99,
-          category: 'dairy',
-        },
-        {
-          item: 'cheese',
-          price: 4.99,
-          category: 'dairy',
-        },
-        {
-          item: 'ice cream',
-          price: 3.99,
-          category: 'dairy',
-        },
-      ],
-    );
+    expect(returnedValue).to.deep.equal([
+      {
+        item: 'milk',
+        price: 2.99,
+        category: 'dairy'
+      },
+      {
+        item: 'cheese',
+        price: 4.99,
+        category: 'dairy'
+      },
+      {
+        item: 'ice cream',
+        price: 3.99,
+        category: 'dairy'
+      }
+    ]);
   });
 
   it('returns an array with multiple items added to the cart', () => {
@@ -80,50 +80,50 @@ describe('addItems', () => {
       {
         item: 'milk',
         price: 2.99,
-        category: 'dairy',
+        category: 'dairy'
       },
       {
         item: 'cheese',
         price: 4.99,
-        category: 'dairy',
-      },
+        category: 'dairy'
+      }
     ];
 
-    const itemsToAdd = [{
-      item: 'ice cream',
-      price: 3.99,
-      category: 'dairy',
-    },
-    {
-      item: 'yogurt',
-      price: 5.99,
-      category: 'dairy',
-    }];
+    const itemsToAdd = [
+      {
+        item: 'ice cream',
+        price: 3.99,
+        category: 'dairy'
+      },
+      {
+        item: 'yogurt',
+        price: 5.99,
+        category: 'dairy'
+      }
+    ];
     const returnedValue = addItems(cart, itemsToAdd);
 
-    expect(returnedValue).to.deep.equal(
-      [
-        {
-          item: 'milk',
-          price: 2.99,
-          category: 'dairy',
-        },
-        {
-          item: 'cheese',
-          price: 4.99,
-          category: 'dairy',
-        },
-        {
-          item: 'ice cream',
-          price: 3.99,
-          category: 'dairy',
-        },
-        {
-          item: 'yogurt',
-          price: 5.99,
-          category: 'dairy',
-        },
-      ],
-    );
+    expect(returnedValue).to.deep.equal([
+      {
+        item: 'milk',
+        price: 2.99,
+        category: 'dairy'
+      },
+      {
+        item: 'cheese',
+        price: 4.99,
+        category: 'dairy'
+      },
+      {
+        item: 'ice cream',
+        price: 3.99,
+        category: 'dairy'
+      },
+      {
+        item: 'yogurt',
+        price: 5.99,
+        category: 'dairy'
+      }
+    ]);
   });
 });

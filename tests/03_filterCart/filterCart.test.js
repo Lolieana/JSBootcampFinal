@@ -1,9 +1,7 @@
 /* eslint-disable no-undef */
 const { expect } = require('chai');
 const sinon = require('sinon');
-const {
-  filterCart,
-} = require('./filterCart');
+const { filterCart } = require('./filterCart');
 
 describe('filterCart', () => {
   after(() => {
@@ -19,13 +17,13 @@ describe('filterCart', () => {
       {
         item: 'milk',
         price: 2.99,
-        category: 'dairy',
+        category: 'dairy'
       },
       {
         item: 'cheese',
         price: 4.99,
-        category: 'dairy',
-      },
+        category: 'dairy'
+      }
     ];
 
     const returnedValue = filterCart(cart, 'dairy');
@@ -37,33 +35,33 @@ describe('filterCart', () => {
       {
         item: 'milk',
         price: 2.99,
-        category: 'dairy',
+        category: 'dairy'
       },
       {
         item: 'banana',
         price: 4.99,
-        category: 'fruit',
+        category: 'fruit'
       },
       {
         item: 'cheese',
         price: 4.99,
-        category: 'dairy',
+        category: 'dairy'
       },
       {
         item: 'ice cream',
         price: 3.99,
-        category: 'dairy',
+        category: 'dairy'
       },
       {
         item: 'strawberry',
         price: 3.99,
-        category: 'fruit',
+        category: 'fruit'
       },
       {
         item: 'steak',
         price: 9.99,
-        category: 'beef',
-      },
+        category: 'beef'
+      }
     ];
 
     const returnedValue = filterCart(cart, 'fruit');
@@ -72,13 +70,13 @@ describe('filterCart', () => {
       {
         item: 'banana',
         price: 4.99,
-        category: 'fruit',
+        category: 'fruit'
       },
       {
         item: 'strawberry',
         price: 3.99,
-        category: 'fruit',
-      },
+        category: 'fruit'
+      }
     ]);
   });
 
@@ -87,28 +85,30 @@ describe('filterCart', () => {
       {
         item: 'milk',
         price: 2.99,
-        category: 'dairy',
+        category: 'dairy'
       },
       {
         item: 'steak',
         price: 9.99,
-        category: 'beef',
+        category: 'beef'
       },
       {
         item: 'cheese',
         price: 4.99,
-        category: 'dairy',
-      },
+        category: 'dairy'
+      }
     ];
 
     spy = sinon.spy(Array.prototype, 'filter');
     const returnedValue = filterCart(cart, 'beef');
 
-    expect(returnedValue).to.deep.equal([{
-      item: 'steak',
-      price: 9.99,
-      category: 'beef',
-    }]);
+    expect(returnedValue).to.deep.equal([
+      {
+        item: 'steak',
+        price: 9.99,
+        category: 'beef'
+      }
+    ]);
     sinon.assert.calledOnce(spy);
   });
 });

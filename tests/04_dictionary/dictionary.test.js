@@ -25,7 +25,7 @@ describe('Dictionary', () => {
         'threatening',
         'portentous',
         'sinister',
-        'threatening',
+        'threatening'
       ]);
     });
   });
@@ -38,7 +38,9 @@ describe('Dictionary', () => {
     it('is a function that calls the dictionary api database and returns the first definition listed for the word passed', async () => {
       expect(typeof firstDefinition).to.equal('string');
 
-      expect(firstDefinition).to.equal('The act of postponing, delaying or putting off, especially habitually or intentionally.');
+      expect(firstDefinition).to.equal(
+        'The act of postponing, delaying or putting off, especially habitually or intentionally.'
+      );
     });
   });
 });

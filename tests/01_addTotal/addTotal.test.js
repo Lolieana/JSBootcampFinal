@@ -1,9 +1,7 @@
 /* eslint-disable no-undef */
 const { expect } = require('chai');
 const sinon = require('sinon');
-const {
-  addTotal,
-} = require('./addTotal');
+const { addTotal } = require('./addTotal');
 
 describe('addTotal', () => {
   after(() => {
@@ -19,13 +17,13 @@ describe('addTotal', () => {
       {
         item: 'milk',
         price: 2.99,
-        category: 'dairy',
+        category: 'dairy'
       },
       {
         item: 'cheese',
         price: 4.99,
-        category: 'dairy',
-      },
+        category: 'dairy'
+      }
     ];
 
     const returnedValue = addTotal(cart, 'NY');
@@ -37,18 +35,18 @@ describe('addTotal', () => {
       {
         item: 'milk',
         price: 2.99,
-        category: 'dairy',
+        category: 'dairy'
       },
       {
         item: 'cheese',
         price: 4.99,
-        category: 'dairy',
+        category: 'dairy'
       },
       {
         item: 'ice cream',
         price: 3.99,
-        category: 'dairy',
-      },
+        category: 'dairy'
+      }
     ];
 
     const returnedValue = addTotal(cart, 'NY');
@@ -65,19 +63,19 @@ describe('addTotal', () => {
       {
         item: 'milk',
         price: 2.99,
-        category: 'dairy',
+        category: 'dairy'
       },
       {
         item: 'cheese',
         price: 4.99,
-        category: 'dairy',
-      },
+        category: 'dairy'
+      }
     ];
 
     spy = sinon.spy(Array.prototype, 'reduce');
     const returnedValue = addTotal(cart, 'NY');
 
-    expect(returnedValue).to.deep.equal(8.70);
+    expect(returnedValue).to.deep.equal(8.7);
     sinon.assert.calledOnce(spy);
   });
 });
