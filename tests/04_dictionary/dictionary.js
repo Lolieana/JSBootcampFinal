@@ -1,12 +1,12 @@
 const axios = require('axios');
-
+// great job using try/catch
 async function getMeanings(word) {
   try {
     const dictionary = await axios.get(
-      `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+      `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`,
     );
 
-    //console.log(dictionary.data[0].meanings);
+    // console.log(dictionary.data[0].meanings);
 
     return dictionary.data[0].meanings;
   } catch (e) {
@@ -17,10 +17,10 @@ async function getMeanings(word) {
 async function getFirstDefinition(word) {
   try {
     const dictionary = await axios.get(
-      `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+      `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`,
     );
 
-    //console.log(dictionary.data[0].meanings[0].definitions[0].definition);
+    // console.log(dictionary.data[0].meanings[0].definitions[0].definition);
 
     return dictionary.data[0].meanings[0].definitions[0].definition;
   } catch (e) {

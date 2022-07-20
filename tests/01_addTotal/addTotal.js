@@ -2,7 +2,7 @@
 function addTotal(cart, state) {
   const totalCost = cart.reduce(
     (total, item) => total + item.price,
-    0
+    0,
   );
 
   let tax = 0;
@@ -15,9 +15,9 @@ function addTotal(cart, state) {
     tax = totalCost * 0.12;
   }
 
-  let costWithTaxStr = Number.parseFloat(totalCost + tax).toFixed(2);
+  const costWithTaxStr = Number.parseFloat(totalCost + tax).toFixed(2);
 
-  //console.log('costWithTaxStr', costWithTaxStr);
+  // console.log('costWithTaxStr', costWithTaxStr);
 
   return Number(costWithTaxStr);
 }

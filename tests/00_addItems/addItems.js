@@ -1,3 +1,4 @@
+// Nice job!
 function addItems(cart, items) {
   console.log('cart', cart);
 
@@ -5,7 +6,7 @@ function addItems(cart, items) {
     cart.push(items[i]);
   }
 
-  //console.log('cart', cart);
+  // console.log('cart', cart);
   return cart;
 }
 
